@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+<!-- ChatBot -->
+<link rel="stylesheet" type="text/css" href="css/jquery.convform.css">
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.convform.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+</head>
+<body>
+<!-- ChatBot -->
+<div class="chat_icon">
+	<i class="fa fa-comments" aria-hidden="true"></i>
+</div>
+
+<div class="chat_box">
+	<div class="my-conv-form-wrapper">
+		<form action="" method="GET" class="hidden">
+
+      <select data-conv-question="Hello! I am an AI based CHATBOT.<br>I can help with many things like keeping a track of your periods or be it 
+		problems related to the periods. Choose the option that you would like to discover:" name="category">
+        <option value="TrackPeriods">Track Periods</option>
+        <option value="KnowAboutPeriods">Know About Periods</option>
+		<option value="PeriodsProblems">Periods Problems</option>
+		<option value="contactgynaec">Contact Gynae</option>
+      </select>
+
+      <div data-conv-fork="category">
+        <div data-conv-case="TrackPeriods">
+			<select data-conv-question="Want to track periods?" name="option">
+				<option value="Regular">Regular</option>
+				<option value="Irregular">Irregular</option>
+			  </select>  
+			  <div data-conv-fork="option">
+				<div data-conv-case="Regular">
+					<input type="text" name="NoOfDays" data-conv-question="Please, tell the no of days of your periods..like 3,5 or 7?"> 
+					<input type="text"  data-conv-question="What is your cyle length? For example 28 days or 30 days">
+					<input type="date" data-conv-question="What was your last period date?">
+					<input type="text" name="customer" data-conv-question="Please, Enter your name">
+
+      <input type="text" data-conv-question="Hi {customer}, <br> Your next periods date will be <b><u> 26 December 2022</u></b>!!." data-no-answer="true">
+
+					
+					</div>
+
+					<div data-conv-case="Irregular">
+						<input type="text" name="NoOfDays" data-conv-question="Please, tell the no of days of your periods..like 3,5 or 7?"> 
+						<input type="text"  data-conv-question="What is your cyle length? For example 28 days or 30 days">
+
+      <input type="date" data-conv-question="What was your last period date?">
+	  <!-- <input type="text" text="Your next period date will be 26 December 2022! Thank you!"> -->
+	  <input type="text" name="name" data-conv-question="Please, Enter your name">
+
+      <input type="text" data-conv-question="Hi {name}, <br> Your next periods date will be <b><u> 26 December 2022 </u></b>!!." data-no-answer="true">
+						</div>
+			  </div>
+			  
+			  
+        </div>
+        <div data-conv-case="KnowAboutPeriods" data-conv-fork="first-question2">
+          <input type="text" name="periodsinfo" data-conv-question="Please, enter your name"> 
+		  <input type="text" data-conv-question="Hi <b>{periodsinfo}</b>, <br> Periods basically represents the menstrual cycle of a women. 
+		  The menstrual cycle is the monthly series of changes a woman's body goes through in preparation for the possibility of pregnancy.
+		  Each month, one of the ovaries releases an egg — a process called ovulation. At the same time, hormonal changes prepare the
+		  uterus for pregnancy. If ovulation takes place and the egg isn't fertilized, the lining of the uterus sheds through the vagina. This is
+		  a menstrual period." data-no-answer="true">
+
+        </div>
+		<div data-conv-case="PeriodsProblems" data-conv-fork="first-question2">
+			<input type="text" name="periodsproblemss" data-conv-question="Please, enter your name"> 
+			<input type="text" data-conv-question="Hi <b>{periodsproblemss}</b>,The most common periods problems are- <br> 
+			1.) <B><U>PMS PRE MENSTRUAL SYNDROME</U></B> : It usually includes mood swings, fatigue, irritability, depression,
+			anxiety. <br>
+			2.) <b><u>AMENORRHEA</u></b> : It means the absence of menstruation. <br>
+			3.) <b><u>MENORRHAGIA</u></b> : It means heavy bleeding. <br>
+			4.) <b><u>DYSMENRRHEA</u></b> : It means more painful cramps. " data-no-answer="true">
+
+			<!-- <input type="text" data-conv-question="Want to know problem you are facing?"> -->
+
+			<select data-conv-question="Choose the most commonly experienced symptom to know your problem" name="choose">
+				<option value="PainfulCramp">Painful Cramps</option>
+				<option value="HeavyBleeding">Heavy Bleeding</option>
+				<option value="AbsenceOfPeriods">Absence of Periods</option>
+				<option value="MoodSwings">Mood swings, anxiety, fatigue, depression etc.</option>
+			  </select>
+
+			  <div data-conv-fork="choose">
+				<div data-conv-case="PainfulCramp">
+					<input type="text" data-conv-question="You are facing the problem <b> DYSMENRRHEA </B>. But you dont need to worry if this happens
+						once in 3 months. It is normal. But if it happens more often and you also face other symptoms like missing of periods once
+						in every 3 months or have heavy bleeding, then you must consult to a gynaec. Thank you! " data-no-answer="true">
+				</div>
+				<div data-conv-case="HeavyBleeding">
+					<input type="text" data-conv-question="You are facing the problem <b> MENORRHAGIA </B>. But you dont need to worry if this happens
+						once in 3 months. It is normal. But if it happens more often and you also face other symptoms like missing of periods once
+						in every 3 months or have very painful cramps, then you must consult to a gynaec. Thank you! " data-no-answer="true">
+				</div>
+				<div data-conv-case="AbsenceOfPeriods">
+					<input type="text" data-conv-question="You are facing the problem <b> AMENORRHEA </B>. This can be problem for which
+						you may need to worry. If it is just for once then no problem at all but if you are facing this 
+						more often then you must consult to a gynaec. Thank you! " data-no-answer="true">
+				</div>
+				<div data-conv-case="MoodSwings">
+					<input type="text" data-conv-question="You are facing the problem <b>PMS-PRE MENSTRUAL SYNDROME  </B>. But you dont need to worry if this happens
+						once in 3 months. It is normal. But if it happens more often and you also face other symptoms like missing of periods once
+						in every 3 months or have heavy bleeding or have very painful cramps as well, then you must consult to a gynaec. Thank you! " data-no-answer="true">
+				</div>
+			  </div>
+            <div data-conv-fork="category">
+			  <div data-conv-case="contactgynaec" data-conv-fork="first-question2">
+				<select data-conv-question="Choose the city" name="find">
+					<option value="Hoshiarpur">Hoshiarpur</option>
+					<option value="chandigarh">Chandigarh</option>
+					<option value="ludhiana">Ludhiana</option>
+					<option value="patiala">Patiala</option>
+					<option value="jalandhar">Jalandhar</option>
+					<option value="amritsar">Amritsar</option>
+					<option value="bathinda">Bathinda</option>
+					<option value="phagwara">Phagwara</option>
+					
+
+				</select>
+				<div data-conv-fork="find">
+					<div data-conv-case="Hoshiarpur">
+						<input type="text" data-conv-question="The best gynae for the city:<br>
+						Dr. Deepa Kapoor (Ph.98628-04191) <br> Dr.Jessy Joseph (Ph.84375-59984)"
+						 data-no-answer="true">
+					</div>
+					<div data-conv-case="chandigarh">
+						<input type="text" data-conv-question="The best gynae for the city:<br>
+						Dr. Ruchi Rai Ahuja (Ph.62848-62829) <br> Dr.Anita Mahey (Ph.98761-30286)"
+						 data-no-answer="true">
+					</div>
+					<div data-conv-case="ludhiana">
+						<input type="text" data-conv-question="The best gynae for the city:<br>
+						Dr. Shuchita Batra (Ph.86190-18421) <br> Dr.Shivani Garg (Ph.91423-00062)"
+						 data-no-answer="true">
+					</div>
+					<div data-conv-case="patiala">
+						<input type="text" data-conv-question="The best gynae for the city:<br>
+						Dr. Mohita Gupta (Ph.97173-11499) <br> Dr.Preeti Jindal (Ph.78892-09762)"
+						 data-no-answer="true">
+					</div>
+					<div data-conv-case="jalandhar">
+						<input type="text" data-conv-question="The best gynae for the city:<br>
+						Dr. Niharika Joshi (Ph.93573-00559) <br> Dr.Jasleen Randhawa (Ph.99145-65544)"
+						 data-no-answer="true">
+					</div>
+					<div data-conv-case="amritsar">
+						<input type="text" data-conv-question="The best gynae for the city:<br>
+						Dr. Neera Kirpal (Ph.1860 500 1066) <br> Dr.Monica Maheshwary (Ph.1860 500 1066)"
+						 data-no-answer="true">
+					</div>
+					<div data-conv-case="bathinda">
+						<input type="text" data-conv-question="The best gynae for the city:<br>
+						Dr. Shelly Gupta (Ph.98157-35129) <br> Dr.Monica Gupta (Ph.Nil)"
+						 data-no-answer="true">
+					</div>
+					<div data-conv-case="phagwara">
+						<input type="text" data-conv-question="The best gynae for the city:<br>
+						Dr. Meena Singh (Ph.94173-44795) <br> Dr.Sunita Bakhshi (Ph.Nil)"
+						 data-no-answer="true">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+			
+
+		</div>
+      </div>
+
+      
+
+	  
+
+      <input data-conv-question="Enter your e-mail for more updates!" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
+
+      <select data-conv-question="Please Confirm">
+        <option value="Yes">Confirm</option>
+		
+      </select>
+
+	  <input type="text" data-conv-question="<b><u>Gentle Reminders:</u></b><br>
+	          1.)Do not forget to carry necessary items like sanitary pads, menstrual cups or tampons if your periods are near.<br>
+			  2.)Do maintain personal hygiene.<br>
+			  3.)Do not forget to get regular check ups from the gynae!!<br>"data-no-answer="true">
+
+			  <input type="text" data-conv-question="ThankYou for visiting us:)"data-no-answer="true">
+			  <select data-conv-question="How was your Experience with us?" name="exp">
+				<option value="experience">It was a great experience</option>
+				<option value="better">Okay Okay</option>
+			  </select>
+			  
+			  
+
+			
+
+  	</form>
+	</div>
+</div>
+<!-- ChatBot end -->
+
+<header class="header">
+	<div class="container-fluid">
+		<div class="row d-flex justify-content-between">
+			<div class="col-md-auto">
+				<a href="#!" class="logo"><img src="pics/logo3.png" alt="logo"></a>
+			</div>
+			<div class="col-md-auto">
+				<nav class="main_nav">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#portfolio">Necessary Items</a></li>
+						<li><a href="#contact">Contact Us</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>		
+	</div>
+</header>	
+
+<div class="banner d-flex align-items-center" style="background-image: url('pics/pexels-sora-shimazaki-5938447.jpg');" id="home">
+	<ul class="socila_links">
+		<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+		<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+		<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+	</ul>	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="banner_cont">
+					<h1>Periods Tracker</h1>
+					<p>Want to know when will you get your next periods? It is easy now! Track them by just clicking on the <b><u>CHATBOT</u></b> based on AI !! </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>			
+
+<div class="about-section" id="about">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-5 text-justify">
+				<h2 class="bdr-btm">More About Periods Tracker</h2>
+				<p>Periods tracker allow women to track their menstrual cycles and receive a prediction for their period dates.
+					This tracker also gives the basic information about what is menstrual cycle and also tells some common symptoms
+					and problems related to them. This is happening all with the AI based CHATBOT.
+				</p>
+				<a href="#contact" class="btn1">Contact Us</a>	
+			</div>
+			<div class="col-md">
+				<div class="about-box">
+					<h3 class="bdr-btm">Salient Features</h3>
+					<ul>
+						<li><strong>Track Periods</strong> <br>Next expected period date can be known</li>
+						<li><strong>Awareness</strong> <br>Gives basic information about menstrual cycle</li>
+						<li><strong>Track Problems</strong> <br> Tells about some common periods problems by identifying their symptoms.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md">
+				<div class="about-box">
+					<h3 class="bdr-btm">Tips for Healthy Menstrual cycle</h3>
+					<ul>
+						<li> Drink plenty of water</li>
+						<li>  Excercise Regularly</li>
+						<li> Eat more iron rich food</li>
+						<li>Stay happy</li>
+						<li>Reduce Caffiene intake</li>
+						<li>Have proper sleep</li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+<div class="portfolio-section" id="portfolio">
+	<div id="port_pop_pic_bg"></div>
+	<div id="port_pop_pic"></div>
+	<div class="container-fluid">
+		<h2 class="text-center bdr-btm bdr-btm-center">All You Need Is</h2>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="portfolio-box" style="background-image: url('pics/pexels-karolina-grabowska-4239016.jpg');">
+					<h3>TAMPONS</h3>
+				</div>		
+			</div>
+			<div class="col-md-4">
+				<div class="portfolio-box" style="background-image: url('pics/pexels-karolina-grabowska-7282113.jpg');">
+					<h3>SANITARY PADS</h3>
+				</div>		
+			</div>
+			<div class="col-md-4">
+				<div class="portfolio-box" style="background-image: url('pics/pexels-sora-shimazaki-5938410.jpg');">
+					<h3>MENSTRUAL CUPS</h3>
+				</div>		
+			</div>
+			<div class="col-md-4">
+				<div class="portfolio-box" style="background-image: url('pics/heatingpads.jpg');">
+					<h3>HEATING PAD</h3>
+				</div>		
+			</div>
+			<div class="col-md-4">
+				<div class="portfolio-box" style="background-image: url('pics/pexels-nataliya-vaitkevich-7615460.jpg');">
+					<h3>MEDICINES</h3>
+				</div>		
+			</div>
+			<div class="col-md-4">
+				<div class="portfolio-box" style="background-image: url('pics/pexels-ena-marinkovic-3793450.jpg');">
+					<h3>COFFEE, CHOCOLATES, FLOWERS</h3>
+				</div>		
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="contact-section d-md-flex" id="contact">
+  <div class="col-md-6 col-12 contact_section_left">
+    <div class="contact_box">
+      <i class="fa fa-phone"></i>
+      <h3>Phone</h3>
+      <p>62800-15313</p>
+    </div>
+    <div class="contact_box">
+      <i class="fa fa-envelope"></i>
+      <h3>Email</h3>
+      <p>arorapriyanka1801@gmail.com</p>
+    </div>
+    <div class="contact_box">
+      <i class="fa fa-map-marker"></i>
+      <h3>Address</h3>
+      <p>PUSSGRC Hoshiarpur</p>
+    </div>
+  </div>
+  <div class="col-md-6 col-12 contact_section_right d-flex align-items-center">
+    <div class="contact_box">
+      <h2 class="bdr-btm">Get In Touch</h2>
+      <form>
+        <div>
+          <input type="text" name="" placeholder="Name">
+          <input type="text" name="" placeholder="Email">
+          <input type="text" name="" placeholder="Subject">
+          <textarea placeholder="Message"></textarea>
+          <input type="submit" class="inline-block" name="" value="Send Message">
+		 
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	portfolioList = document.querySelectorAll('.portfolio-box');
+	portfolioList.forEach(function(portfolioPic) {
+		portfolioPic.addEventListener('click',function(){
+			bg = this.style.backgroundImage;
+			document.getElementById('port_pop_pic_bg').classList.add("active")
+			document.getElementById('port_pop_pic').style.backgroundImage = bg
+			document.getElementById('port_pop_pic').classList.add("active")
+		});	
+	})
+	document.getElementById('port_pop_pic_bg').addEventListener('click',function(){
+			document.getElementById('port_pop_pic_bg').classList.remove("active")
+			document.getElementById('port_pop_pic').classList.remove("active")
+	})
+</script>
+
+</body>
+</html>
